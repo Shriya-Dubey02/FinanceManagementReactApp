@@ -4,6 +4,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Charts from './components/Analysis/Charts';
 import Budgets from './components/Budgets/Budgets';
+import Register from './components/Register/Register';
+import Login from './components/Login/Login';
 
 
 
@@ -19,6 +21,14 @@ const routes=createBrowserRouter([
   {
     path:"/budgets",
     element:<><Navbar/><Budgets/></>
+  },
+  {
+    path:"/register",
+    element:<Register/>
+  },
+  {
+  path:"/login",
+  element:<Login/>
   }
 ])
 function App() {
