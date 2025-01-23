@@ -6,6 +6,9 @@ import Charts from './components/Analysis/Charts';
 import Budgets from './components/Budgets/Budgets';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
+import CategoryForm from './components/Categories/CategoryForm';
+import CategoryItem from './components/Categories/CategoryItem';
+import Category from './components/Categories/Category';
 
 
 
@@ -29,7 +32,12 @@ const routes=createBrowserRouter([
   {
   path:"/login",
   element:<Login/>
+  },
+  {
+  path:"/category",
+  element:<><Navbar/><Category/></>
   }
+
 ])
 function App() {
   return (

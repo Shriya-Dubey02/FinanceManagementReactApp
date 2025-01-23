@@ -24,12 +24,14 @@ function Register() {
   return (
     <div class="container">
         <div class="row">
-     
    < div className="regisBody">
+     {/* Popup */}
    {user ? <div class="alert alert-primary alert-dismissible fade show container " role="alert">
                 <strong> Welcome {user.firstName}</strong>  You Have Registered Successfully!!!
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" ></button>
             </div> : <></>}
+
+      {/* Popup End */}
    
  <div className="main">
 

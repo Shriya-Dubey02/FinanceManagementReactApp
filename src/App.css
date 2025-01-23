@@ -183,3 +183,40 @@ input{
   width: 81vh;
   height: 28px;
 }
+.btn-close{
+  margin-right: 10px;
+}
+.maincategory{
+  background-color: rgb(20, 20, 57);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 30px ;
+  transition: transform 0.2s;
+  width: 600px;
+  text-align: center;
+  margin-left: 25%;
+  margin-right: 50%;
+}
+
+.categoryHead{
+  color: greenyellow
+}
+
+#CategoryId{
+  width: 90vh;
+  height: 28px;
+
+}
+#CategoryName{
+  width: 90vh;
+  height: 28px;
+
+}
+.card-title{
+
+}
+
+#categoryButton{
+  width: 80px;
+}
+
