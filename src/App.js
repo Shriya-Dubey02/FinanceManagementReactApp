@@ -9,13 +9,14 @@ import Login from './components/Login/Login';
 import CategoryForm from './components/Categories/CategoryForm';
 import CategoryItem from './components/Categories/CategoryItem';
 import Category from './components/Categories/Category';
+import NavbarHome from './NavbarHome';
 
 
 
 const routes=createBrowserRouter([
   {
     path:"/",
-    element:<Navbar/>
+    element:<><Navbar/><NavbarHome/></>
   },
   {
     path:"/analysis",
@@ -36,7 +37,8 @@ const routes=createBrowserRouter([
   {
   path:"/category",
   element:<><Navbar/><Category/></>
-  }
+  },
+
 
 ])
 function App() {

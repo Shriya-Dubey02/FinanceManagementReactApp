@@ -23,7 +23,7 @@ function Navbar() {
                 <a href="#">Accounts</a>
               </li>
               <li className="nav-item">
-                <a href="#">Categories</a>
+                <a href="/category">Categories</a>
               </li>
              
             </ul>
@@ -38,6 +38,7 @@ function Navbar() {
       
     </div>
   </nav>
+  
     </div>
   )
 }

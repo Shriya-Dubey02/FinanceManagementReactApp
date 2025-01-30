@@ -6,6 +6,10 @@ import { getCategories } from './Categoryservice'
 function Category() {
     let[category,setCategory]=useState([])
     let[showForm,setShowForm]=useState(false);
+    let[selectedCategory,setSelectedCategory]=useState(null);
+    
+
+    
 
 
     useEffect(()=>{
@@ -19,10 +23,52 @@ function Category() {
         setShowForm((prev)=>!prev)
     }
 
+   
+    const refreshCategories=()=>{
+        getCategories().then(data=>{
+            setCategory(data);
+        })
+
+    }
+
+    const handleSelectCategory=(selectedCategory)=>{
+        setSelectedCategory(selectedCategory);
+        if(selectedCategory){
+            showForm=true;
+        }
+        console.log(selectedCategory);
+
+    }
+   
+
+    
+
+    
+
+
+
 
   return (
     
     <div>
+
+        {/* Navbar Start*/}
+        <nav class="navbarBackground">
+    <div class="container-fluid">
+
+      <ul>
+        <li class="listyle">Expense so far <br/>₹ 2000</li>
+        <li class="listyle">Income so far <br/>₹ 20000</li>
+    
+      </ul>
+      
+    </div>
+    
+  </nav>
+
+
+
+        {/* Navbar end */}
  {/* Show From button start  */}
   
 {/* Show From button end */}
@@ -32,7 +78,9 @@ function Category() {
 
 
 <button className='btn btn-primary' onClick={handleClick}>Show Form</button>
-{showForm?<CategoryForm/>:<></>}
+{showForm?<CategoryForm onAddCategory={refreshCategories} selectedCategory={selectedCategory}
+setSelectedCategory={setSelectedCategory}/>:<></>}
+
 
     {/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
     
@@ -48,6 +96,9 @@ function Category() {
                     return(
                         <CategoryItem
                         CategoryName={s.subCategoryName}
+                        categoryLink={s._links.self.href}
+                        onDelete={refreshCategories}
+                        onSelectCategory={handleSelectCategory}
                         
                         />
                     )
@@ -60,8 +111,11 @@ function Category() {
 
     </div>
    </div>
+ 
    
     </div>
+
+    
   )
 }
 

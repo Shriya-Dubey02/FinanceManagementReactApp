@@ -43,29 +43,29 @@ function Register() {
     <label for="first">
         Enter Username:
     </label>
-    <input type="text" id="uname" name="userName" placeholder="Enter Username"/>
+    <input type="text" id="uname" name="userName" placeholder="Enter Username" required/>
 
 
 
     <label for="password">
         Enter Password:
     </label>
-    <input type="password" id="password" name="password" placeholder="Password here"/>
+    <input type="password" id="password" name="password" placeholder="Enter a secure password" required minLength="8"/>
 
 
     <label for="password">
         Enter Email Id:
     </label>
-    <input type="email" id="email" name="email" placeholder="Email here"/>
+    <input type="email" id="email" name="email" placeholder="Email here" required/>
 
     <label for="password">
         Enter First Name:
     </label>
-    <input type="text" id="fname" name="firstName" placeholder="Enter First Name"/>
+    <input type="text" id="fname" name="firstName" placeholder="Enter First Name" required minLength="2"/>
     <label for="Fname">
         Enter Last Name:
     </label>
-    <input type="text" id="lname" name="lastName" placeholder="Enter Last Name"/>
+    <input type="text" id="lname" name="lastName" placeholder="Enter Last Name" minLength="2" required/>
 
     <div className="wrap">
         <button type="submit"> Register </button>
