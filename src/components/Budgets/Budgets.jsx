@@ -5,6 +5,7 @@ import { data } from "react-router-dom";
 
 function Budgets() {
   let [budget, setBudget] = useState([]);
+  let[selectedBudget,setSelectedBudget]=useState(null);
   
 
   const fetchBudget=()=>{
@@ -18,9 +19,12 @@ function Budgets() {
   },[]);
 
   const refreshBudgets=()=>{
+    
     getBudgets().then(data=>{
+      console.log(data);
       setBudget(data);
     })
+    console.log("Called",budget)
   }
 
   return (
@@ -63,6 +67,7 @@ function Budgets() {
                 subcategory={s.subcategory}
                 budgetLink={s._links.self.href}
                 onDelete={refreshBudgets}
+                onUpdateSpent={refreshBudgets}
               />
             );
           })}

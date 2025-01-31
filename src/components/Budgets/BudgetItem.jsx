@@ -1,88 +1,96 @@
-import React, { useState } from 'react'
-import BudgetForm from './BudgetForm'
-import { deleteBudgets } from './BudgetService';
+import React, { useState } from 'react';
+import { deleteBudgets, getBudgets, getBudgetsById, updateSpentAmount } from './BudgetService';
 
-function BudgetItem({limitAmount,spent,remaining,subcategory,budgetLink,onDelete}) {
-
-
+function BudgetItem({ limitAmount, spent, remaining, subcategory, budgetLink, onDelete,onUpdateSpent }) {
     const [showPopup, setShowPopup] = useState(false);
+    const [expense, setExpense] = useState("");
 
     // Function to delete budget
+    const onSelectDelete = (budget_id_link) => {
+        deleteBudgets(budget_id_link).then(data=>{
+          onDelete();
 
-    const onSelectDelete=(budget_id_link)=>{
-      deleteBudgets(budget_id_link)
-      onDelete();
-      
+        })
+    };
+// Function to update spent amount
 
-    }
-
-
-
-    // ====================================
-  return ( 
-    <div>
-        <tr className="table table-secondary table-striped">
-      <td>{subcategory}</td>
-       <td>{"₹"+limitAmount}</td>
-       <td>{"₹"+spent}</td>
-        <td>{"₹"+remaining}</td>
-        {/* <td> <button className="btn btn-success" id='budgetButton'>Add Expense</button>
-       </td> */}
-      <td> <button
-      onClick={() => setShowPopup(true)}
-      className="btn btn-success" id='budgetButton'
-    > Add Expense
-      
-    </button></td>
-
-    
-       <td><button className="btn btn-danger" id='budgetButton' 
-       onClick={()=>{onSelectDelete(budgetLink)}}>
-           Delete Budget
-               </button></td>
-    
-
-    
-    </tr>
-
-    
-
-    <div className="flex flex-col items-center justify-center h-screen">
-    
-
-    {showPopup && (
-      <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-        <div className="bg-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-xl font-bold mb-4">Popup Title</h2>
-          <p>This is a simple popup content.</p>
-          <button
-            onClick={() => setShowPopup(false)}
-            className="mt-4 px-4 py-2 bg-red-500 text-white rounded-lg"
-          >
-            Close
-          </button>
-        </div>
-      </div>
-    )}
-
-
-
-  </div>
-  </div>
-
-  
-);
-
-
-
-
-
-    // Popup
-
-  
-
-
+const onSelectUpdate=async (link_for_budget,s)=>{
+  console.log(s,link_for_budget);
+  let getBudgets=await getBudgetsById(link_for_budget)
+  getBudgets={...getBudgets,["spent"]:expense}
+ console.log(getBudgets)
+ updateSpentAmount(budgetLink,getBudgets).then(()=>{
+  onUpdateSpent();
+ })
+ 
+ 
   
 }
+    return (
+        <>
+            <tr className="table table-secondary table-striped">
+                <td>{subcategory}</td>
+                <td>{"₹" + limitAmount}</td>
+                <td>{"₹" + spent}</td>
+                <td>₹{limitAmount-spent}</td>
+                <td>
+                    <button
+                        className="btn btn-success"
+                        id="budgetButton"
+                        onClick={() => setShowPopup(true)}
+                    >
+                        Add Expense
+                    </button>
+                </td>
+                <td>
+                    <button
+                        className="btn btn-danger"
+                        id="budgetButton"
+                        onClick={() => onSelectDelete(budgetLink)}
+                    >
+                        Delete
+                    </button>
+                </td>
+            </tr>
 
-export default BudgetItem
+            {/* Expense Popup */}
+            {showPopup && (
+                <div className="popup-overlay">
+                    <div className="popup-content">
+                        <h5>Enter Expense:</h5>
+                        <input
+                            type="number"
+                            value={expense}
+                            onChange={(e) => setExpense(e.target.value)}
+                            className="form-control"
+                            placeholder="Enter amount"
+                            name='spent' 
+                        />
+                        <div className="popup-buttons">
+                            <button
+                                onClick={() => setShowPopup(false)}
+                                className="btn btn-danger"
+                            >
+                                Close
+                            </button>
+                            <button
+                                className="btn btn-success"
+                                onClick={() => {
+                                    console.log("Expense saved:", expense);
+                                    setShowPopup(false)
+                                    onSelectUpdate(budgetLink,expense)
+                                }} 
+                            >
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+           
+        </>
+    );
+}
+
+export default BudgetItem;
