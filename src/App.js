@@ -10,6 +10,8 @@ import CategoryForm from './components/Categories/CategoryForm';
 import CategoryItem from './components/Categories/CategoryItem';
 import Category from './components/Categories/Category';
 import NavbarHome from './NavbarHome';
+import Accounts from './components/Accounts/Accounts';
+import Income from './components/Incomes/Income';
 
 
 
@@ -38,6 +40,14 @@ const routes=createBrowserRouter([
   path:"/category",
   element:<><Navbar/><Category/></>
   },
+  {
+  path:"/accounts",
+  element:<><Navbar/><Accounts/></>
+  },
+  {
+    path:"/incomes",
+    element:<><Navbar/><Income/></>
+  }
 
 
 ])

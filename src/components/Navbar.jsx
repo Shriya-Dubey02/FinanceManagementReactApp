@@ -20,7 +20,11 @@ function Navbar() {
                <Link className="navbar-brand" to="/budgets">Budgets</Link>
               </li>
               <li className="nav-item">
-                <a href="#">Accounts</a>
+                <Link className="navbar-brand" to="/accounts">Accounts</Link>
+              </li>
+
+              <li className="nav-item">
+                <Link className="navbar-brand" to="/incomes">Incomes</Link>
               </li>
               <li className="nav-item">
                 <a href="/category">Categories</a>
