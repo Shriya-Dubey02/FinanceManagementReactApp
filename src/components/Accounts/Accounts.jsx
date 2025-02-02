@@ -1,28 +1,40 @@
 import React, { useEffect, useState } from 'react'
 import AccountItem from './AccountItem'
 import { getAccounts } from './AccountService'
+import Income from '../Incomes/Income'
 
 
 function Accounts() {
 
     let[account,setAccount]=useState([])
 
-    useEffect(()=>{
+
+    const fetchAccounts=()=>{
         getAccounts().then(data=>{
             setAccount(data)
         })
+    }
+    useEffect(()=>{
+
+        fetchAccounts();
+      
     },[])
 
       
       
-{account.map((p)=>{
 
    return(
-   <AccountItem
-   
-   />
- )
-})}
+
+    account.map(account=>{
+        return(
+            <AccountItem
+            accountType={account.accountType} />
+
+        )
+    })
+
+     );
+
     
 }
 
