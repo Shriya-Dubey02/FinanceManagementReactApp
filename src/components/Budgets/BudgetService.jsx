@@ -27,3 +27,24 @@ export const getBudgetsById=(id_link)=>{
     .then(data=>data)
 
 }
+
+export const getSpent=()=>{
+    return fetch("http://localhost:8080/budgets")
+    .then(data=>data.json())
+    .then(data=>data["_embedded"]["budgets"]);
+
+}
+
+export const getIncomeForBudgets=(acc_budget_link)=>{
+    return fetch(acc_budget_link)
+    .then(data=>data.json())
+    .then(data=>data["_embedded"]["accounts"])
+
+}
+
+
+// export const getBalanceFromAccount=()=>{
+//     return fetch("http://localhost:8080/accounts")
+//     .then(data=>data.json())
+//     .then(data=>data["_embedded"]["accounts"])
+// }

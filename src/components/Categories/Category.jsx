@@ -52,23 +52,7 @@ function Category() {
     
     <div>
 
-        {/* Navbar Start*/}
-        <nav class="navbarBackground">
-    <div class="container-fluid">
-
-      <ul>
-        <li class="listyle">Expense so far <br/>₹ 2000</li>
-        <li class="listyle">Income so far <br/>₹ 20000</li>
-    
-      </ul>
-      
-    </div>
-    
-  </nav>
-
-
-
-        {/* Navbar end */}
+       
  {/* Show From button start  */}
   
 {/* Show From button end */}

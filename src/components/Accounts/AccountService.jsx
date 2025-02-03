@@ -11,6 +11,13 @@ export const getIncomes=()=>{
     .then(data=>data["_embedded"]["incomes"])
 }
 
+
+export const getIncomesForAccount=(account_income_link)=>{
+    return fetch(account_income_link)
+    .then(data=>data.json())
+    .then(data=>data["_embedded"]["incomes"])
+}
+
 export const setAccountsForIncome=(account_link,income_link)=>{
     return fetch(income_link,
         {method:"PUT",headers:{

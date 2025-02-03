@@ -1,13 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import totalCashIncome from '../Incomes/Income'
+import { getIncomesForAccount } from './AccountService'
+function AccountItem({accountType,account_link}) {
 
-function AccountItem({accountType,totalCardIncome}) {
-  return (
-    <div className='container'>
+  let[incomeTotal,setIncomeTotal]=useState(0)
+
+  const fetchTotalIncome=async (account_link)=>{
+
+
+           let incomes=await getIncomesForAccount(account_link)
+
+          setIncomeTotal(incomes.reduce(
+            (sum, item) => sum + (item.initialBalance || 0),
+            0
+          ));
       
+
+  }
+
+  useEffect(()=>{
+
+    fetchTotalIncome(account_link)
+
+
+  },[])
+
+  return (      
     <div class="gradient-cards">
- 
-    <div class="col">
-    
       <div class="cardAccount">
         
         <div class="container-card bg-yellow-box">
@@ -28,13 +47,11 @@ function AccountItem({accountType,totalCardIncome}) {
             </defs>
           </svg>
           <p class="card-title">{accountType}</p>
-          <p class="card-description">Total Balance: </p>
+          <p class="card-description">Total Balance: {incomeTotal}</p>
         </div>
         </div>
-      </div>
       </div>
     
-  </div>
 
   
   
