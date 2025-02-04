@@ -12,8 +12,9 @@ import Category from './components/Categories/Category';
 import NavbarHome from './NavbarHome';
 import Accounts from './components/Accounts/Accounts';
 import Income from './components/Incomes/Income';
-import indexPage from './components/indexPage';
 import HomePage from './components/HomePage';
+import AfterRegisterPage from './components/AfterRegisterPage';
+import NewsSection from './components/NewsSection';
 
 
 const routes=createBrowserRouter([
@@ -51,11 +52,15 @@ const routes=createBrowserRouter([
   },
   {
     path:"/",
-    element:<><indexPage/></>
+    element:<><Navbar/><AfterRegisterPage/></>
   },
   {
     path:"/home",
     element:<HomePage/>
+  },
+  {
+    path:"/news",
+    element:<><Navbar/><NewsSection/></>
   }
   
 

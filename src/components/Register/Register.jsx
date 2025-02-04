@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { addUsers } from '../services/UserService';
 import Popup from 'reactjs-popup';
@@ -17,9 +17,14 @@ function Register() {
             firstName:e.target.firstName.value,
             lastName: e.target.lastName.value,
             email: e.target.email.value
-        }).then(data=>setUser(data));
+        }).then(data=>{setUser(data)
+            console.log("Data submitted")
+        });
     }
 
+    useEffect(()=>{
+        console.log("Hello")
+    },[])
       
   return (
     <div class="container">
@@ -69,6 +74,7 @@ function Register() {
 
     <div className="wrap">
         <button type="submit"> Register </button>
+        
     </div>
 </form>
 

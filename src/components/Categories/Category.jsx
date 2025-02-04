@@ -61,7 +61,7 @@ function Category() {
    <div className="container">
 
 
-<button className='btn btn-primary' onClick={handleClick}>Show Form</button>
+<button className='btn btn-primary' onClick={handleClick}>Add Category</button>
 {showForm?<CategoryForm onAddCategory={refreshCategories} selectedCategory={selectedCategory}
 setSelectedCategory={setSelectedCategory}/>:<></>}
 

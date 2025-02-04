@@ -22,6 +22,8 @@ const onSelectUpdate=async (link_for_budget,s)=>{
  updateSpentAmount(budgetLink,getBudgets).then(()=>{
   onUpdateSpent();
  })
+
+
  
  
   
@@ -64,12 +66,16 @@ const onSelectUpdate=async (link_for_budget,s)=>{
                             onChange={(e) => setExpense(e.target.value)}
                             className="form-control"
                             placeholder="Enter amount"
-                            name='spent' 
+                            name='spent' required 
                         />
                         <div className="popup-buttons">
                             <button
-                                onClick={() => setShowPopup(false)}
-                                className="btn btn-danger"
+                                onClick={() => setShowPopup(false)
+
+                                    
+                                }
+                                className="btn btn-danger" 
+
                             >
                                 Close
                             </button>
@@ -78,7 +84,8 @@ const onSelectUpdate=async (link_for_budget,s)=>{
                                 onClick={() => {
                                     console.log("Expense saved:", expense);
                                     setShowPopup(false)
-                                    onSelectUpdate(budgetLink,expense)
+                                    onSelectUpdate(budgetLink,expense);
+                                        
                                 }} 
                             >
                                 Save

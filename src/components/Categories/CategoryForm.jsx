@@ -86,7 +86,7 @@ const handleChange=(e)=>{
          id="CategoryId" 
          name="id" 
          placeholder="Enter Id"
-         value={category.id}
+         value={category.id} required
          onChange={handleChange}/></>}
 
        
@@ -98,7 +98,7 @@ const handleChange=(e)=>{
          id="CategoryName" 
          name="subCategoryName"
          placeholder="Enter Name"  value={category.subCategoryName}
-         onChange={handleChange}/>
+         onChange={handleChange} required/> 
 
   <div class="wrap">
   {

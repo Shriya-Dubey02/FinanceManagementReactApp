@@ -17,6 +17,9 @@ function Navbar() {
               <Link className="navbar-brand" to="/analysis">Analysis</Link>
               </li>
               <li className="nav-item">
+                <Link className="navbar-brand" to="/news">News</Link>
+              </li>
+              <li className="nav-item">
                <Link className="navbar-brand" to="/budgets">Budgets</Link>
               </li>
               <li className="nav-item">
@@ -27,7 +30,7 @@ function Navbar() {
                 <Link className="navbar-brand" to="/incomes">Incomes</Link>
               </li>
               <li className="nav-item">
-                <a href="/category">Categories</a>
+                <Link className="navbar-brand" to="/category">Categories</Link>
               </li>
              
             </ul>

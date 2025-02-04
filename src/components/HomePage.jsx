@@ -16,9 +16,9 @@ import { Link } from 'react-router-dom'
 function HomePage() {
   return (
     <div>
-      <header class="header" style={{backgroundImage: `url(${firstImage})` }} >
-      <nav>
-        <div class="nav__bar">
+      <header class="headerss" style={{backgroundImage: `url(${firstImage})` }} >
+      {/* <nav class="homeNav">
+        <div class="nav__bars">
           
           <div class="nav__menu__btn" id="menu-btn">
             <i class="ri-menu-line"></i>
@@ -31,9 +31,41 @@ function HomePage() {
           <li><a href="#explore">Explore</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <Link to="/Register"><button class="btn nav__btn">Register</button></Link>
+        <Link to="/Register"><button class="btn nav__btns">Register</button></Link>
         
-      </nav>
+      </nav> */}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brandss" href="#">BudgetBuddy</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+
+        <li class="nav-item">
+          <Link to="/register">Register</Link>
+        </li>
+        
+        
+        
+      </ul>
+    </div>
+  </div>
+</nav>
       <div class="section__container header__container" id="home">
         <p>Simple - Unique - Friendly</p>
         <h1>Simple Way<br /> to Manage<span> Personal Finances</span>.</h1>
@@ -52,9 +84,7 @@ function HomePage() {
         <p class="section__description">
           Designed to make every aspect of financial planning—whether it’s budgeting, saving, investing, or tracking expenses—seamless and stress-free. With user-friendly technology, personalized insights, and a dedication to your success, we ensure your financial journey is not just secure but also rewarding.
         </p>
-        <div class="about__btn">
-          <button class="btn">Read More</button>
-        </div>
+        
       </div>
     </section>
 
@@ -65,7 +95,7 @@ function HomePage() {
       <div class="room__grid">
         <div class="room__card">
           <div class="room__card__image">
-            <img src={image}alt="room" />
+            <img src={image}alt="room" class="plantImage" />
            
           </div>
           <div class="room__card__details">
@@ -75,7 +105,7 @@ function HomePage() {
         </div>
         <div class="room__card">
           <div class="room__card__image">
-            <img src={plant} alt="room" />
+            <img src={plant} alt="room" class="plantImage"/>
             
           </div>
           <div class="room__card__details">
@@ -85,7 +115,7 @@ function HomePage() {
         </div>
         <div class="room__card">
           <div class="room__card__image">
-            <img src={graph} alt="room" />
+            <img src={graph} alt="room" class="plantImage" />
            
           </div>
           <div class="room__card__details">
@@ -124,17 +154,7 @@ function HomePage() {
     </section>
 
 <br/><br/><br/>
-    <section class="explore" id="explore" >
-      <p class="section__subheader">EXPLORE</p>
-      <h2 class="section__header">What's New Today.</h2>
-      <div class="explore__bg">
-        <div class="explore__content">
-          <p class="section__description">10th MAR 2023</p>
-          <h4>A New Menu Is Available In Our Hotel.</h4>
-          <button class="btn">Continue</button>
-        </div>
-      </div>
-    </section>
+    
 
     <footer class="footer" id="contact">
       <div class="section__container footer__container">

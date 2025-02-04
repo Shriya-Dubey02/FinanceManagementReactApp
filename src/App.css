@@ -9,7 +9,7 @@ body{
   color: #BED754;
   
   text-decoration: none;
-  font-size: 30px;
+  font-size: 22px;
   font-weight: 500;
   display: inline;
 
@@ -24,6 +24,21 @@ body{
   font-size: 25px;
   font-weight: 700;
 
+}
+.imageHome{
+  width: 900px;
+  height: 400px;
+  margin-left: 150px;
+  border: 2px solid black;
+  border-style: double;
+}
+
+.Maintext{
+  color: rgb(40, 40, 106);
+  text-align: center;
+  font-size: 60px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
 }
 .listyle{
   display: inline-block;
@@ -54,7 +69,7 @@ body{
   display: inline-block;
   color: orange;
   text-decoration: none;
-  padding-left: 130px;
+  padding-left: 80px;
   font-weight: 500;
 
 }
@@ -227,6 +242,8 @@ input{
   background-color:#1a5a76;
   width: 400px;
   height: 400px;
+  border: 2px solid orange;
+  border-radius: 3%;
   
 }
 .card-title{
@@ -237,10 +254,12 @@ input{
 }
 #categoryImage{
   border-radius: 50%;
+  margin-left: 8px;
 }
 .card{
   width: 400px;
   height: 350px;
+
 }
 
 .card-text-budget{
@@ -573,7 +592,7 @@ input{
     font-size: 24px;
   }
     .ag-courses_box {
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    flex-wrap: wrap; 
   }
 }
 
@@ -605,5 +624,83 @@ input{
 
 /* End  */
 
-/* IndexPage Start */
+/* Container for all restaurant items */
+.restaurant-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns */
+  gap: 20px; /* Space between each card */
+  padding: 60px; /* Padding around the grid */
+  width: 50%;
+}
+
+/* Style for individual restaurant card */
+.restaurant-container {
+  border: 1px solid #d85959; /* Border around the card */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Ensures rounded corners don't get cut off */
+  background-color: #487cbfdf; /* White background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add subtle shadow */
+}
+
+.restaurant-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.card-body1 {
+  padding: 30px;
+}
+
+.card-titles {
+  font-size: 1.50rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.card-text {
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+.menu-btn {
+  margin-top: 10px;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .restaurant-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row on smaller screens */
+  }
+}
+.newsul li{
+  background: #3598de;
+  color: #1a1617e0;
+  margin: 30px;
+
+}
+.newsul li a{
+  color: rgb(185, 63, 63);
+  font-weight: 400;
+  font-size: 25px;
+}
+.newsul li a p{
+  color: rgb(21, 19, 19);
+  font-weight: 400;
+  font-size: 20px;
+}
+.liveNews{
+  font-size: 40px;
+  text-align: center;
+  color: #750E21;
+}
+#liveImage{
+  width: 50%;
+  display: flex;
+  margin-left: 250px;
+  padding-bottom: 20px;
+}
+
 
