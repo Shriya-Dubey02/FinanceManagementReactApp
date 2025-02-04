@@ -58,7 +58,7 @@ function AccountItem({accountType,account_link}) {
         <div className="card-body1">
     
           <p className="card-titles restaurant-address">{accountType}</p>
-          <p className="card-titles restaurant-price">Balance: {incomeTotal}</p>
+          <p className="card-titles restaurant-price">Balance: ₹{incomeTotal}</p>
         </div>
       </div>
     </div>

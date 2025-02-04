@@ -87,10 +87,10 @@ function Budgets() {
         <div className="container-fluid">
           <ul>
             <li className="listyle">
-              Expense so far <br /> {totalExpense}
+              Expense so far <br /> ₹{totalExpense}
             </li>
             <li className="listyle">
-              Income so far <br /> {totalIncomes}
+              Income so far <br /> ₹{totalIncomes}
             </li>
           </ul>
         </div>

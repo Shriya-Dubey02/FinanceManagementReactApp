@@ -37,7 +37,7 @@ function HomePage() {
 
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brandss" href="#">BudgetBuddy</a>
+    <Link class="navbar-brandss" href="#" to="/">BudgetBuddy</Link>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

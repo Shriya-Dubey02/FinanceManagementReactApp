@@ -16,7 +16,7 @@ function IncomeItem({initialBalance,accountType,cashLink,OnDelete,savingLink,car
   return (
        <tr className="table table-secondary table-striped">
         <td>{accountType}</td>
-       <td>{initialBalance}</td>
+       <td>₹{initialBalance}</td>
        <td><button
                         className="btn btn-danger"
                         id="DeleteButton" 
